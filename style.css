@@ -1,3 +1,15 @@
+:root {
+  --Green: #54e6af;
+  --lightGreen: #b3ffe2;
+  --black: #121725;
+  --white: #ffffff;
+  --darkGray: #2c344b;
+  --Gray: #5a668a;
+  --lightGray: #c2cbe5;
+  --red: #fb3e3e;
+  --googleFont: "Chivo", sans-serif;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -6,13 +18,29 @@
 
 html {
   font-size: 62.5%;
+  font-family: var(--googleFont);
 }
 
 body {
   min-height: 100vh;
 
-  background-color: pink;
+  background: url(./assets/mobile/image-host.jpg) no-repeat, var(--darkGray);
+  background-blend-mode: multiply;
+  background-size: cover;
+
   font-size: 1.8rem;
+}
+
+.tabletBg {
+  display: none;
+}
+
+.desktopBg {
+  display: none;
+}
+
+.bgPattern {
+  display: none;
 }
 
 .logo {
@@ -31,6 +59,13 @@ body {
   font-weight: 300;
   font-size: 2.6rem;
   line-height: 38px;
+
+  color: var(--Green);
+  text-transform: uppercase;
+}
+
+.container > h1 > span {
+  color: var(--white);
 }
 
 .container > p {
@@ -39,11 +74,13 @@ body {
   font-weight: 300;
   font-size: 1.5rem;
   line-height: 25px;
+
+  color: var(--lightGray);
 }
 
 /******* company logos  ********/
 
-.companies {
+.companiesMobile {
   margin-bottom: 4.8rem;
 
   display: flex;
@@ -51,8 +88,12 @@ body {
   justify-content: space-between;
 }
 
-.companies > img {
+.companiesMobile > img {
   width: 7rem;
+}
+
+.companiesTablet {
+  display: none;
 }
 
 .mobileBtns {
@@ -66,7 +107,7 @@ body {
 
   margin-top: 0.8rem;
   margin-left: 3.2rem;
-  color: red;
+  color: var(--red);
 }
 
 /******** buttons  *********/
@@ -79,6 +120,17 @@ body {
   border-radius: 28px;
   font-weight: 700;
   font-size: 1.4rem;
+
+  background-color: var(--darkGray);
+  color: var(--white);
+}
+
+.inputEmail:focus {
+  outline: none;
+}
+
+.inputEmail::placeholder {
+  color: rgba(255, 255, 255, 0.5);
 }
 
 .btnRequest {
@@ -91,14 +143,40 @@ body {
   font-size: 1.4rem;
 
   cursor: pointer;
-}
 
-.tabletBtns {
-  display: none;
+  background-color: var(--Green);
+  color: var(--black);
+}
+.btnRequest:hover {
+  background-color: var(--lightGreen);
 }
 
 /******* TABLET  ********/
 @media (min-width: 700px) {
+  body {
+    background: var(--black);
+  }
+
+  .tabletBg {
+    display: block;
+
+    position: absolute;
+    top: 0;
+    right: 0;
+
+    z-index: -10;
+  }
+
+  .bgPattern {
+    display: block;
+
+    position: absolute;
+    bottom: 0;
+    left: 3rem;
+
+    z-index: -5;
+  }
+
   .logo {
     margin: 0;
     margin-top: 5rem;
@@ -111,12 +189,13 @@ body {
     margin-left: 3.9rem;
     padding: 0;
 
-    background-color: orange;
+    background-color: var(--black);
     max-width: 63.5rem;
     text-align: left;
   }
 
   .container > h1 {
+    padding-top: 9.3rem;
     margin-bottom: 3.1rem;
 
     font-weight: 300;
@@ -134,22 +213,16 @@ body {
     line-height: 28px;
   }
 
+  /******** buttons  *********/
   .mobileBtns {
-    display: none;
-  }
-  .tabletBtns {
     margin-bottom: 6.4rem;
-    display: block;
 
     max-width: 42.7rem;
     height: 5.6rem;
-
-    position: relative;
   }
 
-  /******** buttons  *********/
   .inputEmail {
-    padding: 1.4rem 30rem 1.4rem 3.2rem;
+    padding: 1.4rem 0 1.4rem 3.2rem;
     height: 100%;
     width: 100%;
   }
@@ -166,19 +239,43 @@ body {
 
   /******* company logos  ********/
 
-  .companies {
+  .companiesTablet {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
     margin-bottom: 0rem;
     max-width: 53.6rem;
   }
 
-  .companies > img {
+  .companiesTablet > img {
     width: 10rem;
+  }
+
+  .companiesMobile {
+    display: none;
   }
 }
 /******* DESKTOP  ********/
 @media (min-width: 1400px) {
-  body {
-    background-color: purple;
+  .tabletBg {
+    display: none;
+  }
+
+  .desktopBg {
+    display: block;
+
+    position: absolute;
+    top: 13rem;
+    right: 0;
+
+    z-index: -10;
+  }
+
+  .bgPattern {
+    bottom: 7.8rem;
+    left: unset;
+    right: 0;
   }
 
   .logo {
@@ -191,11 +288,12 @@ body {
     margin-left: 16.5rem;
     padding: 0;
 
-    background-color: orange;
     max-width: 72.3rem;
   }
 
   .container > h1 {
+    padding-top: 8.8rem;
+    padding-right: 8.8rem;
     margin-bottom: 2.4rem;
 
     font-size: 5.2rem;

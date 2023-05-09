@@ -12,26 +12,43 @@
     />
 
     <title>Frontend Mentor | Pod request access landing page</title>
+    <!-- google font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Chivo:wght@300;700&display=swap"
+      rel="stylesheet"
+    />
     <!-- css -->
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
+    <img
+      class="tabletBg"
+      src="./assets/tablet/image-host.jpg"
+      alt="image-host"
+    />
+    <img
+      class="desktopBg"
+      src="./assets/desktop/image-host.jpg"
+      alt="image-host"
+    />
+    <img
+      class="bgPattern"
+      src="./assets/desktop/bg-pattern-dots.svg"
+      alt="bg-pattern-dots"
+    />
     <img class="logo" src="./assets/desktop/logo.svg" alt="logo" />
     <div class="container">
-      <h1>Publish your podcasts everywhere.</h1>
+      <h1>Publish your podcasts <span>everywhere.</span></h1>
       <p>
         Upload your audio to Pod with a single click. We’ll then distribute your
         podcast to Spotify, Apple Podcasts, Google Podcasts, Pocket Casts and
         more!
       </p>
 
-      <div class="tabletBtns">
-        <input class="inputEmail inputTablet" placeholder="Email address" />
-        <button class="btnRequest btnTablet">Request access</button>
-      </div>
-
-      <!-- company logos -->
-      <div class="companies">
+      <!-- company MOBILE -->
+      <div class="companiesMobile">
         <img src="./assets/desktop/spotify.svg" alt="spotify" />
         <img src="./assets/desktop/apple-podcast.svg" alt="apple-podcast" />
         <img src="./assets/desktop/google-podcasts.svg" alt="google-podcasts" />
@@ -41,6 +58,13 @@
         <input class="inputEmail inputMobile" placeholder="Email address" />
         <button class="btnRequest btnMobile">Request access</button>
         <p class="mobileError"></p>
+      </div>
+      <!-- company TABLET -->
+      <div class="companiesTablet">
+        <img src="./assets/desktop/spotify.svg" alt="spotify" />
+        <img src="./assets/desktop/apple-podcast.svg" alt="apple-podcast" />
+        <img src="./assets/desktop/google-podcasts.svg" alt="google-podcasts" />
+        <img src="./assets/desktop/pocket-casts.svg" alt="pocket-casts" />
       </div>
     </div>
     <script src="app.js"></script>
